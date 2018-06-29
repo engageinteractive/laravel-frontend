@@ -20,7 +20,7 @@ The files published this way are examples of structure and are not enforced by t
 
 ## Basic Usage
 
-Add the following key to your `.env` file to enable the frontend routes (typically, local and staging:)
+Add the following key to your `.env` file to enable the frontend routes (typically, local and staging):
 
 ```sh
 FRONTEND_ENABLED=true
@@ -32,7 +32,7 @@ Now you can visit `/frontend/` and see the templates
 
 ## Config File Customisation
 
-By default the package uses the `config/frontend.php` file to define all the settings, such as route name, url path, template file paths etc. The package provides a mechanism to change which file is used, by binding your own instance of `ConfigProvider` in your `AppServiceProvider`. This is useful in cases where `config/frontend.php` is already in use within your project for example.
+By default the package uses the `config/frontend.php` file to define all the settings, such as route name, URL path, template file paths etc. The package provides a mechanism to change which file is used, by binding your own instance of `ConfigProvider` in your `AppServiceProvider`. This is useful in cases where `config/frontend.php` is already in use within your project for example.
 
 First create your own provider:
 
@@ -74,11 +74,11 @@ class AppServiceProvider extends ServiceProvider
 }
 ```
 
-Now, throughout the package when the `ConfigProvider` is requested via the laravel service container, yours will be created instead.
+Now, throughout the package when the `ConfigProvider` is requested via the Laravel service container, yours will be created instead.
 
 ## Laravel Compatibility
 
-Works on Larvel 5.5 and 5.6.
+Works on Laravel 5.5 and 5.6.
 
 ## License
 
