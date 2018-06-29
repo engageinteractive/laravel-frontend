@@ -1,5 +1,5 @@
 {
-    "name": "nadinengland/laravel-frontend",
+    "name": "engageinteractive/laravel-frontend",
     "description": "Frontend Build Framework for Laravel Projects",
     "type": "library",
     "require": {
