@@ -22,8 +22,8 @@ class ServiceProvider extends BaseServiceProvider
         ], 'config');
 
         $this->publishes([
-            __DIR__.'/../resources/views/app/frontend.blade.php' => resource_path('app/frontend.blade.php'),
-            __DIR__.'/../resources/views/frontend/example.blade.php' => resource_path('frontend/example.blade.php'),
+            __DIR__.'/../resources/views/app/frontend.blade.php' => resource_path('views/app/frontend.blade.php'),
+            __DIR__.'/../resources/views/frontend/example.blade.php' => resource_path('views/frontend/example.blade.php'),
         ], 'templates');
 
         $this->configProvider = $this->app->make(ConfigProvider::class);
