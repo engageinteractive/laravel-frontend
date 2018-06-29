@@ -2,7 +2,7 @@
 
 namespace Engage\LaravelFrontend;
 
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class TemplateProvider
 {
@@ -25,11 +25,11 @@ class TemplateProvider
      */
     public function allTemplatesPaths()
     {
-        $resourcePath = 'resources/views/';
+        $resourcePath = resource_path('views/');
         $templatePath = $this->configProvider->get('resource_path');
         $pathPrefix = $resourcePath . rtrim($templatePath, '/');
 
-        $files = Storage::disk('local')->allFiles($pathPrefix);
+        $files = File::allFiles($pathPrefix);
 
         return collect($files)->sort()->map(function ($file) use ($pathPrefix) {
             $withoutPrefix = substr($file, strlen($pathPrefix));
