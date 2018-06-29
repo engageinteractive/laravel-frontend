@@ -4,13 +4,17 @@ Laravel package to provide frontend template routes for non-production environme
 
 ## Installation
 
-    composer require engage/laravel-frontend
+```sh
+composer require engage/laravel-frontend
+```
 
 The package's service provided will be autoloaded on startup.
 
 Next publish the templates and config file:
 
-    php artisan vendor:publish --provider="Engage\LaravelFrontend\ServiceProvider"
+```sh
+php artisan vendor:publish --provider="Engage\LaravelFrontend\ServiceProvider"
+```
 
 The files published this way are examples of struture and are not enforced by the package. Edit `config/frontend.php` to change the paths of these files. If you also need to change the filename of `config/frontend.php` see [Config File Customisation](#config-file-customisation).
 
@@ -18,7 +22,9 @@ The files published this way are examples of struture and are not enforced by th
 
 Add the following key to your `.env` file to enable the frontend routes (typically, local and staging:)
 
-    FRONTEND_ENABLED=true
+```sh
+FRONTEND_ENABLED=true
+```
 
 If this key is already in use for your project, you can change this in the `config/frontend.php` file.
 
@@ -30,39 +36,43 @@ By default the package uses the `config/frontend.php` file to define all the set
 
 First create your own provider:
 
-    <?php
+```php
+<?php
 
-    namespace App\Config;
+namespace App\Config;
 
-    use Engage\LaravelFrontend\ConfigProvider;
+use Engage\LaravelFrontend\ConfigProvider;
 
-    class FrontendConfigProvider extends ConfigProvider
-    {
-        /**
-         * Key to use when retrieving config values.
-         *
-         * @var string
-         */
-        protected $configKey = 'laravel-frontend';
-    }
+class FrontendConfigProvider extends ConfigProvider
+{
+    /**
+     * Key to use when retrieving config values.
+     *
+     * @var string
+     */
+    protected $configKey = 'laravel-frontend';
+}
+```
 
 Then, add the provider to your bindings on startup.
 
-    class AppServiceProvider extends ServiceProvider
-    {
-    ...
+```php
+class AppServiceProvider extends ServiceProvider
+{
+...
 
-        /**
-         * All of the container bindings that should be registered.
-         *
-         * @var array
-         */
-        public $bindings = [
-            \Engage\LaravelFrontend\ConfigProvider::class => \App\Config\FrontendConfigProvider::class,
-        ];
+    /**
+     * All of the container bindings that should be registered.
+     *
+     * @var array
+     */
+    public $bindings = [
+        \Engage\LaravelFrontend\ConfigProvider::class => \App\Config\FrontendConfigProvider::class,
+    ];
 
-    ...
-    }
+...
+}
+```
 
 Now, throughout the package when the `ConfigProvider` is requested via the laravel service container, yours will be created instead.
 
@@ -72,4 +82,4 @@ Works on Larvel 5.5 and 5.6.
 
 ## License
 
-Laravel Tinker is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+Laravel Tinker is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
