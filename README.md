@@ -8,7 +8,7 @@ Laravel package to provide frontend template routes for non-production environme
 composer require engage/laravel-frontend
 ```
 
-The package's service provided will be autoloaded on startup.
+The package's service provider will be autoloaded on startup.
 
 Next publish the templates and config file:
 
@@ -16,7 +16,7 @@ Next publish the templates and config file:
 php artisan vendor:publish --provider="Engage\LaravelFrontend\ServiceProvider"
 ```
 
-The files published this way are examples of struture and are not enforced by the package. Edit `config/frontend.php` to change the paths of these files. If you also need to change the filename of `config/frontend.php` see [Config File Customisation](#config-file-customisation).
+The files published this way are examples of structure and are not enforced by the package. Edit `config/frontend.php` to change the paths of these files. If you also need to change the filename of `config/frontend.php` see [Config File Customisation](#config-file-customisation).
 
 ## Basic Usage
 
@@ -32,7 +32,7 @@ Now you can visit `/frontend/` and see the templates
 
 ## Config File Customisation
 
-By default the package uses the `config/frontend.php` file to define all the settings, such as route name, url path, template file paths etc. The package provides a mechanism to change which file is used, by binding your own instance of `ConfigProvide` in your `AppServiceProvider`. This is useful in cases where `config/frontend.php` is already in use within your project for example.
+By default the package uses the `config/frontend.php` file to define all the settings, such as route name, url path, template file paths etc. The package provides a mechanism to change which file is used, by binding your own instance of `ConfigProvider` in your `AppServiceProvider`. This is useful in cases where `config/frontend.php` is already in use within your project for example.
 
 First create your own provider:
 
