@@ -89,4 +89,4 @@ Works on Laravel 5.5 and 5.6.
 
 ## License
 
-Laravel Tinker is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+Laravel Frontend is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
