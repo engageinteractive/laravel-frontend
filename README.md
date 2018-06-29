@@ -1,5 +1,9 @@
 # Laravel Frontend
 
+<p align="center">
+<a href="https://travis-ci.org/laravel/tinker"><img src="https://travis-ci.org/engageinteractive/laravel-frontend.svg" alt="Build Status"></a>
+</p>
+
 Laravel package to provide frontend template routes for non-production environments.
 
 ## Installation
