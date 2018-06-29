@@ -1,7 +1,10 @@
 # Laravel Frontend
 
 <p align="center">
-<a href="https://travis-ci.org/laravel/tinker"><img src="https://travis-ci.org/engageinteractive/laravel-frontend.svg" alt="Build Status"></a>
+<a href="https://travis-ci.org/engageinteractive/laravel-frontend"><img src="https://travis-ci.org/engageinteractive/laravel-frontend.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/engageinteractive/laravel-frontend"><img src="https://poser.pugx.org/engageinteractive/laravel-frontend/d/total.svg" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/engageinteractive/laravel-frontend"><img src="https://poser.pugx.org/engageinteractive/laravel-frontend/v/stable.svg" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/engageinteractive/laravel-frontend"><img src="https://poser.pugx.org/engageinteractive/laravel-frontend/license.svg" alt="License"></a>
 </p>
 
 Laravel package to provide frontend template routes for non-production environments.
