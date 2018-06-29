@@ -1,0 +1,36 @@
+{
+    "name": "nadinengland/laravel-frontend",
+    "description": "Frontend Build Framework for Laravel Projects",
+    "type": "library",
+    "require": {
+        "laravel/framework": ">=5.5 <5.7"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^3.6",
+        "mockery/mockery": "^1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Engage\\LaravelFrontend\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Thomas Nadin",
+            "email": "nadinengland@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Engage\\LaravelFrontend\\ServiceProvider"
+            ]
+        }
+    }
+}
