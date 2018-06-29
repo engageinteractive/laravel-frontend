@@ -9,7 +9,7 @@ Laravel package to provide frontend template routes for non-production environme
 ## Installation
 
 ```sh
-composer require engage/laravel-frontend
+composer require engageinteractive/laravel-frontend
 ```
 
 The package's service provider will be autoloaded on startup.
