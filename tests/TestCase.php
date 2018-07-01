@@ -29,7 +29,7 @@ class TestCase extends TestBenchTestCase
     protected function getEnvironmentSetUp($app)
     {
         $app->config->set('app.key', 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA');
-        $app->config->set('frontend', require __DIR__.'/../config/frontend.php');
+        $app->config->set('frontend', require __DIR__.'/../publishes/config/frontend.php');
         $app->config->set('frontend.enabled', true);
     }
 }

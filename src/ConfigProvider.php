@@ -20,16 +20,33 @@ class ConfigProvider
      * Retreives config values using the config key property as a prefix to all
      * keys given.
      *
-     * @param string  $key  used after the set configKey
-     * @param string  $default  fallback uses if not set.
+     * @param string  $key  used after the configKey
+     * @param string  $default  fallback used if not set
      * @return mixed
      */
     public function get($key = null, $default = null)
     {
         if (is_null($key)) {
-            return config($this->configKey);
+            return Config::get($this->configKey);
         }
 
-        return config("{$this->configKey}.{$key}", $default);
+        return Config::get("{$this->configKey}.{$key}", $default);
+    }
+
+    /**
+     * Sets config values using the config key property as a prefix to all
+     * keys given.
+     *
+     * @param string  $key  used after the configKey
+     * @param string  $value  value key is set to
+     * @return mixed
+     */
+    public function set($key = null, $value = null)
+    {
+        if (is_null($key)) {
+            return Config::set($this->configKey);
+        }
+
+        return Config::set("{$this->configKey}.{$key}", $value);
     }
 }

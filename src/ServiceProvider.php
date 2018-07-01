@@ -18,13 +18,17 @@ class ServiceProvider extends BaseServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/../config/frontend.php' => config_path('frontend.php'),
+            __DIR__.'/../publishes/config/frontend.php' => config_path('frontend.php'),
         ], 'config');
 
         $this->publishes([
-            __DIR__.'/../resources/views/app/frontend.blade.php' => resource_path('views/app/frontend.blade.php'),
-            __DIR__.'/../resources/views/frontend/example.blade.php' => resource_path('views/frontend/example.blade.php'),
+            __DIR__.'/../publishes/resources/views/app/frontend.blade.php' => resource_path('views/app/frontend.blade.php'),
+            __DIR__.'/../publishes/resources/views/frontend/example.blade.php' => resource_path('views/frontend/example.blade.php'),
         ], 'templates');
+
+        $this->publishes([
+            __DIR__.'/../publishes/tests/Feature/FrontendTemplatesTest.php' => base_path('tests/Feature/FrontendTemplatesTest.php'),
+        ], 'tests');
 
         $this->configProvider = $this->app->make(ConfigProvider::class);
 
