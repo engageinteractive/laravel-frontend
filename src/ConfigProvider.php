@@ -2,6 +2,8 @@
 
 namespace Engage\LaravelFrontend;
 
+use Illuminate\Support\Facades\Config;
+
 /**
  * Layer that the package uses to interact with the config file that is
  * published regardless of the name uses at runtime.

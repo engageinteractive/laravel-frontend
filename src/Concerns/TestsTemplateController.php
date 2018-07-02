@@ -33,8 +33,8 @@ trait TestsTemplateController
             $response = $this->get($template);
 
             PHPUnit::assertEquals(
-                $response->status(),
                 200,
+                $response->status(),
                 'Path "' . $template . '" did not return 200 status code'
             );
         }
