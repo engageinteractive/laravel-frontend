@@ -34,7 +34,7 @@ trait InteractsWithConfigProvider
      */
     protected function getTemplatePath(string $template = null) : string
     {
-        return rtrim($this->getConfigProvider()->get('template_path'), '/') . '/' . $template;
+        return rtrim($this->getConfigProvider()->get('resource_path'), '/') . '/' . $template;
     }
 
     /**
