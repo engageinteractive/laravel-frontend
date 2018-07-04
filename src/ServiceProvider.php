@@ -45,8 +45,11 @@ class ServiceProvider extends BaseServiceProvider
      */
     protected function mapRoutes()
     {
-        Route::prefix($this->getRoutePath())->middleware('web')->group(function () {
-            $routeName = app(ConfigProvider::class)->get('route_name');
+        $prefix = $this->getRoutePath();
+        $middleware = $this->configProvider->get('middleware');
+
+        $context = Route::prefix($prefix)->middleware($middleware)->group(function () {
+            $routeName = $this->configProvider->get('route_name');
 
             Route::get('/', TemplateController::class . '@index')
                 ->name($routeName . '.index');
