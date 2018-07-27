@@ -1,4 +1,4 @@
-# Laravel Frontend
+<p align="center"><img src="logo.svg" width="474px" alt="Laravel Frontend" /></p>
 
 <p align="center">
 <a href="https://travis-ci.org/engageinteractive/laravel-frontend"><img src="https://travis-ci.org/engageinteractive/laravel-frontend.svg" alt="Build Status"></a>
