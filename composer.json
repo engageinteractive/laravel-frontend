@@ -4,7 +4,8 @@
     "version": "1.0.7",
     "type": "library",
     "require": {
-        "laravel/framework": ">=5.5 <5.8"
+        "laravel/framework": ">=5.5 <5.8",
+        "engageinteractive/laravel-config-provider": "^1.0"
     },
     "require-dev": {
         "orchestra/testbench": "^3.6",

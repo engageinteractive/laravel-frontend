@@ -39,13 +39,11 @@ Now you can visit `/frontend/` and see the templates
 
 ## Config File Customisation
 
-By default the package uses the `config/frontend.php` file to define all the settings, such as route name, URL path, template file paths etc. The package provides a mechanism to change which file is used, by binding your own instance of `ConfigProvider` in your `AppServiceProvider`. This is useful in cases where `config/frontend.php` is already in use within your project for example.
+By default the package uses the `config/frontend.php` file to define all the settings, such as route name, URL path, template file paths etc. However, the package uses [Laravel Config Provider](https://github.com/engageinteractive/laravel-config-provider) to allow you change to which file is used. To do so bind your own instance of `ConfigProvider` in your `AppServiceProvider`. This is useful in cases where `config/example-package.php` is already in use within your project for example.
 
 First create your own provider:
 
 ```php
-<?php
-
 namespace App\Config;
 
 use Engage\LaravelFrontend\ConfigProvider;
