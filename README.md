@@ -85,7 +85,7 @@ Now, throughout the package when the `ConfigProvider` is requested via the Larav
 
 ## Laravel Compatibility
 
-Works on Laravel 5.5 and 5.6.
+Works on Laravel 5.5, 5.6 and 5.7.
 
 ## License
 
