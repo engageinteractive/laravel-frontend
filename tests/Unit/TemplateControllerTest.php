@@ -7,8 +7,8 @@ use Illuminate\View\FileViewFinder;
 use Mockery as m;
 
 use Tests\TestCase;
-use Engage\LaravelFrontend\ServiceProvider;
-use Engage\LaravelFrontend\TemplateProvider;
+use EngageInteractive\LaravelFrontend\ServiceProvider;
+use EngageInteractive\LaravelFrontend\TemplateProvider;
 
 class TemplateControllerTest extends TestCase
 {

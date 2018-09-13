@@ -5,7 +5,7 @@ namespace Tests\Unit;
 use Illuminate\Support\Facades\Config;
 
 use Tests\TestCase;
-use Engage\LaravelFrontend\ConfigProvider;
+use EngageInteractive\LaravelFrontend\ConfigProvider;
 
 class ConfigProviderTest extends TestCase
 {

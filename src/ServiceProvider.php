@@ -1,6 +1,6 @@
 <?php
 
-namespace Engage\LaravelFrontend;
+namespace EngageInteractive\LaravelFrontend;
 
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 use Illuminate\Support\Facades\Route;

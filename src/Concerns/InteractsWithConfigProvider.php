@@ -1,8 +1,8 @@
 <?php
 
-namespace Engage\LaravelFrontend\Concerns;
+namespace EngageInteractive\LaravelFrontend\Concerns;
 
-use Engage\LaravelFrontend\ConfigProvider;
+use EngageInteractive\LaravelFrontend\ConfigProvider;
 
 /**
  * Convience methods for working with config values, performing common

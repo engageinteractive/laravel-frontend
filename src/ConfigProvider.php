@@ -1,6 +1,6 @@
 <?php
 
-namespace Engage\LaravelFrontend;
+namespace EngageInteractive\LaravelFrontend;
 
 use Illuminate\Support\Facades\Config;
 

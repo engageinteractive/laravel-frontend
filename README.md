@@ -20,7 +20,7 @@ The package's service provider will be autoloaded on startup.
 Next publish the templates and config file:
 
 ```sh
-php artisan vendor:publish --provider="Engage\LaravelFrontend\ServiceProvider"
+php artisan vendor:publish --provider="EngageInteractive\LaravelFrontend\ServiceProvider"
 ```
 
 The files published this way are examples of structure and are not enforced by the package. Edit `config/frontend.php` to change the paths of these files. If you also need to change the filename of `config/frontend.php` see [Config File Customisation](#config-file-customisation).
@@ -46,7 +46,7 @@ First create your own provider:
 ```php
 namespace App\Config;
 
-use Engage\LaravelFrontend\ConfigProvider;
+use EngageInteractive\LaravelFrontend\ConfigProvider;
 
 class FrontendConfigProvider extends ConfigProvider
 {
@@ -72,7 +72,7 @@ class AppServiceProvider extends ServiceProvider
      * @var array
      */
     public $bindings = [
-        \Engage\LaravelFrontend\ConfigProvider::class => \App\Config\FrontendConfigProvider::class,
+        \EngageInteractive\LaravelFrontend\ConfigProvider::class => \App\Config\FrontendConfigProvider::class,
     ];
 
 ...

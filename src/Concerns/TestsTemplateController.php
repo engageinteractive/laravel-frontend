@@ -1,11 +1,11 @@
 <?php
 
-namespace Engage\LaravelFrontend\Concerns;
+namespace EngageInteractive\LaravelFrontend\Concerns;
 
 use PHPUnit\Framework\Assert as PHPUnit;
 
-use Engage\LaravelFrontend\TemplateProvider;
-use Engage\LaravelFrontend\ConfigProvider;
+use EngageInteractive\LaravelFrontend\TemplateProvider;
+use EngageInteractive\LaravelFrontend\ConfigProvider;
 
 trait TestsTemplateController
 {

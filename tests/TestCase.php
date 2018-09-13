@@ -4,7 +4,7 @@ namespace Tests;
 
 use Orchestra\Testbench\TestCase as TestBenchTestCase;
 
-use Engage\LaravelFrontend\ServiceProvider;
+use EngageInteractive\LaravelFrontend\ServiceProvider;
 
 class TestCase extends TestBenchTestCase
 {

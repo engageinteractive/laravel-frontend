@@ -13,7 +13,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Engage\\LaravelFrontend\\": "src/"
+            "EngageInteractive\\LaravelFrontend\\": "src/"
         }
     },
     "autoload-dev": {
@@ -31,7 +31,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Engage\\LaravelFrontend\\ServiceProvider"
+                "EngageInteractive\\LaravelFrontend\\ServiceProvider"
             ]
         }
     }

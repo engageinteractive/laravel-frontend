@@ -1,6 +1,6 @@
 <?php
 
-namespace Engage\LaravelFrontend;
+namespace EngageInteractive\LaravelFrontend;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;

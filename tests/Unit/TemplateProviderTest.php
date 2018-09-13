@@ -5,7 +5,7 @@ namespace Tests\Unit;
 use Illuminate\Support\Facades\File;
 
 use Tests\TestCase;
-use Engage\LaravelFrontend\TemplateProvider;
+use EngageInteractive\LaravelFrontend\TemplateProvider;
 
 class TemplateProviderTest extends TestCase
 {
