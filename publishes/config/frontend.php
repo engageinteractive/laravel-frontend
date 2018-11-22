@@ -61,6 +61,17 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | View Composer Template Flag
+    |--------------------------------------------------------------------------
+    |
+    | Variable to check for in the View's data when the View Composer is
+    | loading Page Defaults when rendering frontend tempaltes.
+    |
+    */
+    'template_flag' => '__frontend',
+
+    /*
+    |--------------------------------------------------------------------------
     | Route Middleware
     |--------------------------------------------------------------------------
     |

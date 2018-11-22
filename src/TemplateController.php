@@ -39,7 +39,8 @@ class TemplateController extends Controller
             return abort(404);
         }
 
-        return view($view_path)->with(compact('templates'));
+        return view($view_path)->with(compact('templates'))
+            ->with($this->configProvider->get('template_flag'), true);
     }
 
     /**
@@ -50,7 +51,8 @@ class TemplateController extends Controller
      */
     public function show(string $template)
     {
-        return view($this->getTemplatePath($template));
+        return view($this->getTemplatePath($template))
+            ->with($this->configProvider->get('template_flag'), true);
     }
 
     /**
