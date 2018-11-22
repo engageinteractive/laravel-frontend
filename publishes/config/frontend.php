@@ -57,7 +57,7 @@ return [
     | resources/views/ folder.
     |
     */
-    'index_template_path' => 'app/frontend',
+    'index_template_path' => 'app.frontend',
 
     /*
     |--------------------------------------------------------------------------
