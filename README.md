@@ -43,7 +43,7 @@ Often within an app, it is useful to have view composers that load fallback vari
 
 To do this you can subclass the `PageDefaultsViewComposer` and add register it within a service provider:
 
-### Subclass and implement your own defaults
+### Subclass the View Composer implementing your own values
 
 ```
 <?php
@@ -55,7 +55,7 @@ use Illuminate\Support\ServiceProvider;
 
 use EngageInteractive\LaravelFrontend\PageDefaultsViewComposer as BaseViewComposer;
 
-class PageDefaultViewComposer extends BaseViewComposer
+class PageDefaultsViewComposer extends BaseViewComposer
 {
     /**
      * Gets frontend default variables.
@@ -91,12 +91,12 @@ class PageDefaultViewComposer extends BaseViewComposer
 }
 ```
 
-### Register your ViewComposer
+### Register your View Composer
 
 ```
 <?php
 
-namespace App\Providers;
+namespace App\Http\ViewComposers;
 
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
@@ -119,7 +119,6 @@ class ViewComposerServiceProvider extends ServiceProvider
         View::composer('app/*', PageDefaultsViewComposer::class);
     }
 }
-
 ```
 
 ## Config File Customisation
