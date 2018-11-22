@@ -5,7 +5,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
-### 2.1.0 - 2018-11-22
+### Changes
+- Fixes documentation for the PageDefaultsViewComposer.
+
+## 2.1.0 - 2018-11-22
+### Added
 - `PageDefaultsViewComposer` to support page defaults in both frontend and non-frontend template.
 ### Changed
 - 'index_template_path' in config now used the dot syntax preferred by Laravel.

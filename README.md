@@ -35,7 +35,92 @@ FRONTEND_ENABLED=true
 
 If this key is already in use for your project, you can change this in the `config/frontend.php` file.
 
-Now you can visit `/frontend/` and see the templates
+Now you can visit `/frontend/` and see the templates.
+
+## Page Defaults
+
+Often within an app, it is useful to have view composers that load fallback variables from a configuration or the database when not provided by the controller explicitly. An example of this could be the page title in the HTML `<head>` for example. Depending on the setup you might not have a database defined when building the frontend templates, or you might not even want the database involved. In this case you still want your layout templates to recieve this variables, but it would be nice to hard code them for all the frontend templates.
+
+To do this you can subclass the `PageDefaultsViewComposer` and add register it within a service provider:
+
+### Subclass and implement your own defaults
+
+```
+<?php
+
+namespace App\Providers;
+
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\ServiceProvider;
+
+use EngageInteractive\LaravelFrontend\PageDefaultsViewComposer as BaseViewComposer;
+
+class PageDefaultViewComposer extends BaseViewComposer
+{
+    /**
+     * Gets frontend default variables.
+     *
+     * @return array
+     */
+    protected function defaultsForFrontend()
+    {
+        return [
+            'page' => [
+                'title' => 'HTML Meta Title',
+                'description' => 'HTML Meta Description',
+                ...
+            ],
+        ];
+    }
+
+    /**
+     * Gets application default variables (i.e. ones used when not in the
+     * frontend templates.)
+     *
+     * @return array
+     */
+    protected function defaultsForApp()
+    {
+        return [
+            'page' => [
+                'title' => config('app.name'),
+                ...
+            ],
+        ];
+    }
+}
+```
+
+### Register your ViewComposer
+
+```
+<?php
+
+namespace App\Providers;
+
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\ServiceProvider;
+
+use App\Http\ViewComposers\PageDefaultsViewComposer;
+
+class ViewComposerServiceProvider extends ServiceProvider
+{
+    /**
+     * Register bindings in the container.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        // Here the 'app/' directory is assumed to be all the individual pages,
+        // and does not contain partials, or layouts. This is because the
+        // composer will be ran multiple times if the Blade template extends
+        // from files also in the 'app/' directory.
+        View::composer('app/*', PageDefaultsViewComposer::class);
+    }
+}
+
+```
 
 ## Config File Customisation
 
