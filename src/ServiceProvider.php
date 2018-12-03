@@ -50,11 +50,12 @@ class ServiceProvider extends BaseServiceProvider
 
         $context = Route::prefix($prefix)->middleware($middleware)->group(function () {
             $routeName = $this->configProvider->get('route_name');
+            $echoPath = $this->configProvider->get('echo_path') ?: 'echo';
 
             Route::get('/', TemplateController::class . '@index')
                 ->name($routeName . '.index');
 
-            Route::match(array_diff(Router::$verbs, ['GET']), '/', TemplateController::class . '@echo')
+            Route::any('/' . $echoPath, TemplateController::class . '@echo')
                 ->name($routeName . '.echo');
 
             Route::any('/{template}', TemplateController::class . '@show')
