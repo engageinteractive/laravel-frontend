@@ -4,7 +4,7 @@
     "version": "3.0.0",
     "type": "library",
     "require": {
-        "laravel/framework": ">=5.5 <5.8",
+        "laravel/framework": ">=5.5 <6",
         "engageinteractive/laravel-config-provider": "^1.0"
     },
     "require-dev": {

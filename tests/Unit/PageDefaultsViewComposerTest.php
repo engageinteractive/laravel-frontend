@@ -13,11 +13,11 @@ use Tests\TestCase;
 
 class PageDefaultsViewComposerTest extends TestCase
 {
-    public function setUp()
+    public function getEnvironmentSetUp($app)
     {
-        parent::setUp();
+        parent::getEnvironmentSetUp($app);
 
-        $this->configProvider = $this->app->make(ConfigProvider::class);
+        $this->configProvider = $app->make(ConfigProvider::class);
     }
 
     public function test_compose_DoesNotMergeAnythingIfNullValuesGiven()
