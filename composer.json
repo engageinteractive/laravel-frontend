@@ -5,7 +5,8 @@
     "type": "library",
     "require": {
         "laravel/framework": ">=5.5 <6",
-        "engageinteractive/laravel-config-provider": "^1.0"
+        "engageinteractive/laravel-config-provider": "^1.0",
+        "engageinteractive/laravel-view-models": "^1.0"
     },
     "require-dev": {
         "orchestra/testbench": "^3.6",
