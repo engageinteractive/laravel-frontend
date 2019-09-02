@@ -3,6 +3,7 @@
 namespace EngageInteractive\LaravelFrontend;
 
 use Illuminate\View\View;
+use Illuminate\Support\Arr;
 use Illuminate\Http\Request;
 
 abstract class PageDefaultsViewComposer
@@ -43,7 +44,7 @@ abstract class PageDefaultsViewComposer
         // are merged into the arrays (if provided) of the current view.
         foreach ($this->defaults($view) ?? [] as $key => $value) {
             $defaults = ($value ?? []);
-            $provided = (array_get($existing, $key) ?? []);
+            $provided = (Arr::get($existing, $key) ?? []);
 
             $view->with($key, array_merge([], $defaults, $provided));
         }
@@ -61,7 +62,7 @@ abstract class PageDefaultsViewComposer
             return false;
         }
 
-        return array_get($view->getData(), $this->configProvider->get('template_flag'));
+        return Arr::get($view->getData(), $this->configProvider->get('template_flag'));
     }
 
     /**
