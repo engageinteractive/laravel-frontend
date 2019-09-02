@@ -1,7 +1,7 @@
 {
     "name": "engageinteractive/laravel-frontend",
     "description": "Frontend Build Framework for Laravel Projects",
-    "version": "3.0.3",
+    "version": "3.0.4",
     "type": "library",
     "require": {
         "laravel/framework": ">=5.5",
