@@ -1,0 +1,16 @@
+version: '3'
+services:
+
+  app:
+    build:
+      context: ../
+      dockerfile: docker/local.app.Dockerfile
+    restart: unless-stopped
+    volumes:
+      - ../:/var/www:delegated
+      - ./local.app.php.ini:/usr/local/etc/php/php.ini:delegated
+      - ~/.composer/docker-cache/:/root/.composer:cached
+    working_dir: /var/www
+    environment:
+      - "COMPOSER_ALLOW_SUPERUSER=true"
+      - "DBUS_SESSION_BUS_ADDRESS=/dev/null"
