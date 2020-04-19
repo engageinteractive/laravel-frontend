@@ -1,96 +1,83 @@
 <?php
 
-namespace EngageInteractive\LaravelFrontend;
+namespace Engage\LaravelFrontend;
 
 use Illuminate\View\View;
 use Illuminate\Support\Arr;
-use Illuminate\Http\Request;
 
 abstract class PageDefaultsViewComposer
 {
     /**
-     * Laravel Frontend Config Provider.
-     *
-     * @var ConfigProvider
-     */
-    protected $configProvider;
-
-    /**
-     * Creates a FrontendViewComposer instance.
-     *
-     * @param ConfigProvider  $configProvider
-     * @return void
-     */
-    public function __construct(ConfigProvider $configProvider)
-    {
-        $this->configProvider = $configProvider;
-    }
-
-    /**
-     * Binds fallback values for both frontend and backend templates that are
-     * used on ever page, such as meta data. Existing values are meged over the
-     * defaults so any values provided by the view will always exist. Merge is
-     * only one level deep.
+     * Returns default data to the view, if a frontend template request
+     * data provided in the templates method is overwritten on the app data.
      *
      * @param  View  $view
+     * 
      * @return void
      */
-    public function compose(View $view)
+    public function compose(View $view): void
     {
-        $existing = $view->getData($view);
-
-        // Merge in the page defaults into the view data. All values of the defaults
-        // should be arrays at the top level, such as "page" and "model". These defaults
-        // are merged into the arrays (if provided) of the current view.
-        foreach ($this->defaults($view) ?? [] as $key => $value) {
-            $defaults = ($value ?? []);
-            $provided = (Arr::get($existing, $key) ?? []);
-
-            $view->with($key, array_merge([], $defaults, $provided));
+        if (! $this->shouldApplyTemplatesData()) {
+            $view->with($this->app());
+            return;
         }
+        
+        $view->with($this->getTemplateData());
     }
 
     /**
-     * Checks to see if frontend variables should be applied.
+     * Returns true if frontend variables should be applied.
      *
      * @param  View  $view
+     * 
      * @return bool
      */
-    protected function shouldApplyFrontend(View $view)
+    protected function shouldApplyTemplatesData(): bool
     {
-        if (!$this->configProvider->get('enabled')) {
+        if (! Config::get('enabled')) {
             return false;
         }
 
-        return Arr::get($view->getData(), $this->configProvider->get('template_flag'));
+        if (! Routing::isRunningTemplateRoute()) {
+            return false;
+        }
+
+        return true;
     }
 
     /**
-     * Gets the default values for the page, either for the frontend templates,
-     * or the main application (e.g. production constants or database driven.)
-     *
-     * @param  View  $view
+     * Returns resulting array from defaults overwritten
+     * with templates array.
+     * 
      * @return array
      */
-    protected function defaults(View $view)
+    protected function getTemplateData(): array
     {
-        return ($this->shouldApplyFrontend($view))
-            ? $this->defaultsForFrontend()
-            : $this->defaultsForApp();
+        $templates = Arr::dot($this->templates());
+        $app = $this->app();
+
+        if (! $templates) {
+            return $app;
+        }
+
+        foreach ($templates as $key => $value) {
+            Arr::set($app, $key, $value);
+        }
+
+        return $app;
     }
 
     /**
-     * Gets frontend default variables.
+     * Returns developer-defined application default variables.
      *
      * @return array
      */
-    abstract protected function defaultsForFrontend();
+    abstract protected function app(): array;
 
     /**
-     * Gets application default variables (i.e. ones used when not in the
-     * frontend templates.)
+     * Returns developer-defined frontend default variables.
      *
      * @return array
      */
-    abstract protected function defaultsForApp();
+    abstract protected function templates(): array;
 }
