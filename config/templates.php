@@ -11,7 +11,7 @@ return [
     | production environments.
     |
     */
-    'enabled' => env('FRONTEND_ENABLED', false),
+    'enabled' => env('TEMPLATES_ENABLED', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -23,7 +23,7 @@ return [
     | route('frontend.index')
     |
     */
-    'route_name' => 'frontend',
+    'route_name' => 'templates',
 
     /*
     |--------------------------------------------------------------------------
@@ -35,7 +35,7 @@ return [
     | /frontend/
     |
     */
-    'route_path' => 'frontend',
+    'route_path' => 'templates',
 
     /*
     |--------------------------------------------------------------------------
@@ -46,40 +46,7 @@ return [
     | the frontend templates.
     |
     */
-    'resource_path' => 'frontend',
-
-    /*
-    |--------------------------------------------------------------------------
-    | Index Template Path
-    |--------------------------------------------------------------------------
-    |
-    | Path to the index template that lists out all the others, from the
-    | resources/views/ folder.
-    |
-    */
-    'index_template_path' => 'app.frontend',
-
-    /*
-    |--------------------------------------------------------------------------
-    | View Composer Template Flag
-    |--------------------------------------------------------------------------
-    |
-    | Variable to check for in the View's data when the View Composer is
-    | loading Page Defaults when rendering frontend tempaltes.
-    |
-    */
-    'template_flag' => '__frontend',
-
-
-    /*
-    |--------------------------------------------------------------------------
-    | Echo route path
-    |--------------------------------------------------------------------------
-    |
-    | Path to use when building the TemplateController's echo route.
-    |
-    */
-    'echo_path' => 'echo',
+    'resource_path' => 'templates',
 
     /*
     |--------------------------------------------------------------------------
@@ -89,6 +56,22 @@ return [
     | Middlewares to run when adding frontend routes.
     |
     */
-    'middleware' => [ 'web' ],
+	'middleware' => [ 'web' ],
+
+	/*
+    |--------------------------------------------------------------------------
+    | Frontend Template Flag
+    |--------------------------------------------------------------------------
+    |
+    */
+    'template_flag' => 'template',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Styleguide link
+    |--------------------------------------------------------------------------
+    |
+    */
+    'styleguide' => true,
 
 ];
