@@ -1,6 +1,6 @@
 {
     "name": "engageinteractive/laravel-frontend",
-    "description": "Frontend Build Framework for Laravel Projects",
+    "description": "Frontend build framework for Laravel projects",
     "type": "library",
     "require": {
         "laravel/framework": ">=5.5",
