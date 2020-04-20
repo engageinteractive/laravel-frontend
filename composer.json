@@ -4,7 +4,7 @@
     "type": "library",
     "require": {
         "laravel/framework": ">=5.5",
-        "engageinteractive/laravel-view-models": "^1.0"
+        "fzaninotto/faker": "^1.9.1"
     },
     "require-dev": {
         "orchestra/testbench": "^3.6",
