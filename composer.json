@@ -1,38 +1,28 @@
 {
     "name": "engageinteractive/laravel-frontend",
-    "description": "Frontend Build Framework for Laravel Projects",
-    "version": "3.0.4",
+    "description": "Frontend build framework for Laravel projects",
     "type": "library",
     "require": {
         "laravel/framework": ">=5.5",
-        "engageinteractive/laravel-config-provider": "^1.0",
-        "engageinteractive/laravel-view-models": "^1.0"
+        "fzaninotto/faker": "^1.9.1"
     },
     "require-dev": {
         "orchestra/testbench": "^3.6",
         "mockery/mockery": "^1.1"
     },
     "autoload": {
+        "files": [
+            "src/helpers.php"
+        ],
         "psr-4": {
-            "EngageInteractive\\LaravelFrontend\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Tests\\": "tests/"
+            "Engage\\LaravelFrontend\\": "src/"
         }
     },
     "license": "MIT",
-    "authors": [
-        {
-            "name": "Thomas Nadin",
-            "email": "nadinengland@gmail.com"
-        }
-    ],
     "extra": {
         "laravel": {
             "providers": [
-                "EngageInteractive\\LaravelFrontend\\ServiceProvider"
+                "Engage\\LaravelFrontend\\FrontendServiceProvider"
             ]
         }
     }
