@@ -7,8 +7,7 @@ return [
     | Enabled
     |--------------------------------------------------------------------------
     |
-    | Turns the frontend routes on. You should ensure this is set to false in
-    | production environments.
+    | Turns the frontend routes on. Should be disabled on production.
     |
     */
     'enabled' => env('TEMPLATES_ENABLED', false),
@@ -18,9 +17,8 @@ return [
     | Route Name
     |--------------------------------------------------------------------------
     |
-    | Name prefix of the routes defined by the package, e.g.:
-    |
-    | route('frontend.index')
+    | Name prefix of the routes defined by the package
+    | e.g. route('templates.index')
     |
     */
     'route_name' => 'templates',
@@ -30,9 +28,8 @@ return [
     | Route Path
     |--------------------------------------------------------------------------
     |
-    | URL path prefix of the  routes defined by the package, e.g.:
-    |
-    | /frontend/
+    | URL path prefix of the  routes defined by the package
+    | e.g. /templates/
     |
     */
     'route_path' => 'templates',
@@ -42,7 +39,7 @@ return [
     | Resource Path
     |--------------------------------------------------------------------------
     |
-    | Path prefix within the resources/views/ folder that the package looks for
+    | Path prefix within the /resources/ folder that the package looks for
     | the frontend templates.
     |
     */
@@ -68,10 +65,12 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Styleguide link
+    | Show Styleguide Link
     |--------------------------------------------------------------------------
     |
+    | If enabled, an external link to the styleguide will be displayed.
+    |
     */
-    'styleguide' => true,
+    'show_styleguide' => true,
 
 ];
