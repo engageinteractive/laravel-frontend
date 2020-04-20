@@ -1,7 +1,7 @@
 <ul class="list-none my-1 text-sm">
-	@if ($links['styleguide'])
+	@if ($links['show_styleguide'])
 		<li class="py-1 font-bold leading-tight">
-			<a class="hover:text-blue-600" href="/_templates/styleguide/index" target="_blank">
+			<a class="hover:text-blue-600" href="{{ $links['styleguide_uri'] }}" target="_blank">
 				<span class="inline-block align-middle antialiased">Styleguide</span>
 				<svg class="fill-current w-4 h-4 inline-block align-middle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
 					<path d="M0 0h24v24H0z" fill="none"/>

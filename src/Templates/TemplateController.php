@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\View;
 use Engage\LaravelFrontend\Config;
+use Engage\LaravelFrontend\Routing;
 
 class TemplateController extends Controller
 {
@@ -27,7 +28,8 @@ class TemplateController extends Controller
             ->with('templates', $templates)
             ->with(Config::get('template_flag'), true)
             ->with('links', [
-                'styleguide' => Config::get('show_styleguide', false),
+                'show_styleguide' => Config::get('show_styleguide', false),
+                'styleguide_uri' => Routing::getTemplateRoute('styleguide/index'),
             ]);
     }
 
