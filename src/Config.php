@@ -9,7 +9,7 @@ class Config
     /**
      * @var string data file directory.
      */
-    const DIR_DATA = '__data';
+    const DIR_DATA = '_data';
 
     /**
      * @var string styleguide directory.
