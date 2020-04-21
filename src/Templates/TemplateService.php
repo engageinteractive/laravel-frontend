@@ -17,6 +17,10 @@ class TemplateService
      */
     public function getTemplates(): array
     {
+        if (!is_dir(Config::getAbsoluteResourcePath())) {
+            throw new TemplateException(Config::getAbsoluteResourcePath().' does not exist.');
+        }
+
         $files = $this->getFinderFiles();
 
         $templates = [];
