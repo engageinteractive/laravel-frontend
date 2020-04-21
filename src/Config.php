@@ -55,7 +55,7 @@ class Config
     public static function getAbsoluteResourcePath(): string
     {
         $path = Path::join('views', self::getRelativeResourcePath());
-        return realpath(resource_path($path));
+        return resource_path($path);
     }
 
     /**
