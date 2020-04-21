@@ -47,7 +47,6 @@ class TemplateService
     protected function processFile($file): array
     {
         $path = Path::withoutExtension($file->getRelativePathname());
-        $name = Path::withoutRoot($path);
 
         $parser = new FileParser($file->getRealPath());
         $meta = $parser->getMeta();
@@ -55,7 +54,7 @@ class TemplateService
         $templateData = [
             'path' => Routing::getTemplateRoute($path),
             'located' => $file->getRelativePathname(),
-            'name' => $name,
+            'name' => Path::withoutRoot($path),
         ];
 
         return array_merge($templateData, $meta);
@@ -92,5 +91,17 @@ class TemplateService
     {
         $resourcePath = Config::getRelativeResourcePath();
         return Path::join($resourcePath, $template);
+    }
+
+    /**
+     * Coverts a string from a slug back into a word.
+     *
+     * @param string
+     * 
+     * @return string
+     */
+    public static function strReverseSlug(string $string) : string
+    {
+        return str_replace('-', ' ', $string);
     }
 }

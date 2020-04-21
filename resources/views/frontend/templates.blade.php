@@ -3,7 +3,7 @@
 		@if (is_string($key) && $key != 'path' && $key != 'name' && is_array($template))
 			{{-- Top level directory: Heading is shown. --}}
 			<li class="py-3">
-				<h2 class="text-lg text-gray-900 font-bold antialiased">{{ ucwords($key) }}</h2>
+				<h2 class="text-lg text-gray-900 font-bold antialiased">{{ str_format_domain($key) }}</h2>
 				@include('frontend::frontend/templates', ['templates' => $template]) 
 			</li>
 		@else
