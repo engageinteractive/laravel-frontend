@@ -8,7 +8,7 @@
 	</a>
 
 	@if (isset($template['description']) && $template['description'])
-		<span class="text-xs text-gray-600">({{ $template['description'] }})</span>
+		<span class="text-xs text-gray-600">— {{ $template['description'] }}</span>
 	@endif
 
 </li>
