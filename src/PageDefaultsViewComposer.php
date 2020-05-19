@@ -17,12 +17,35 @@ abstract class PageDefaultsViewComposer
      */
     public function compose(View $view): void
     {
-        if (! $this->shouldApplyTemplatesData()) {
-            $view->with($this->app());
-            return;
+        if ($this->shouldApplyTemplatesData()) {
+            $defaults = $this->getTemplateData();
+        } else {
+            $defaults = $this->app();
         }
-        
-        $view->with($this->getTemplateData());
+
+        $dataForView = $this->getViewNormalisedData($view, $defaults);
+
+        $view->with($dataForView);
+    }
+
+    /**
+     * Returns resulting array from defaults
+     * overwritten with controller data.
+     * 
+     * @param View $view
+     * @param array $defaultsData
+     * 
+     * @return array
+     */
+    protected function getViewNormalisedData(View $view, array $defaultsData)
+    {
+        $viewData = Arr::dot($view->getData());
+
+        foreach ($viewData as $key => $value) {
+            Arr::set($defaultsData, $key, $value);
+        }
+
+        return $defaultsData;
     }
 
     /**
