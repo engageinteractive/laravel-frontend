@@ -29,7 +29,7 @@ class TemplateController extends Controller
             ->with(Config::get('template_flag'), true)
             ->with('links', [
                 'show_styleguide' => Config::get('show_styleguide', false),
-                'styleguide_uri' => Routing::getTemplateRoute('styleguide/index'),
+                'styleguide_uri' => Routing::getTemplateRoute('styleguide'),
             ]);
     }
 
