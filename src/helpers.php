@@ -1,7 +1,6 @@
 <?php
 
 use Engage\LaravelFrontend\Data\DataFile;
-use Engage\LaravelFrontend\Mocking\Mock;
 use Engage\LaravelFrontend\Templates\TemplateService;
 
 if (! function_exists('_use')) {
@@ -15,18 +14,6 @@ if (! function_exists('_use')) {
     function _use($key)
     {
         return (new DataFile)->use($key);
-    }
-}
-
-if (! function_exists('_mock')) {
-    /**
-     * Returns an instance of Mock.
-     *
-     * @return \Engage\LaravelFrontend\Mocking\Mock
-     */
-    function _mock()
-    {
-        return new Mock;
     }
 }
 

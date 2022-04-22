@@ -3,8 +3,7 @@
     "description": "Frontend build framework for Laravel projects",
     "type": "library",
     "require": {
-        "laravel/framework": ">=5.5",
-        "fzaninotto/faker": "^1.9.1"
+        "laravel/framework": ">=5.5"
     },
     "require-dev": {
         "orchestra/testbench": "^3.6",
