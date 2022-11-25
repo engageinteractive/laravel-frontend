@@ -58,11 +58,17 @@ class TemplateController extends Controller
     {
         $status = $request->query('status') ?: 200;
         $json = $request->query('json');
+        $data = $request->query('data');
+
+        if ($data) {
+            $data = json_decode(base64_decode($data), JSON_OBJECT_AS_ARRAY);
+            return response()->json($data, $status);
+        }
 
         if ($json) {
             return response()->json($json, $status);
-        } else {
-            return response('', $status);
         }
+
+        return response('', $status);
     }
 }
